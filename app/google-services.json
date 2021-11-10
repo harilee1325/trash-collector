@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "549996388228",
+    "project_id": "trash-collector-8635e",
+    "storage_bucket": "trash-collector-8635e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549996388228:android:5136ad530b7cc57e0c07d1",
+        "android_client_info": {
+          "package_name": "com.example.trashcollector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549996388228-jru7hgaref6ntdqol8h1t42b9ppt88ic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE27dONYXywEaHiIIKeQs-EwxuiAu5eS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549996388228-jru7hgaref6ntdqol8h1t42b9ppt88ic.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

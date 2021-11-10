@@ -33,7 +33,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
-                android:text="New Request on 12/2/1999"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -44,7 +44,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
-                android:text="Latitude: 78.98989\nLongitude: 89.97887"
+                android:text=""
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 

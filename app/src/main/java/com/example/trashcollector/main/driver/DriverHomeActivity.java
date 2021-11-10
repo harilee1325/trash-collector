@@ -8,6 +8,8 @@ import android.os.Bundle;
 import com.example.trashcollector.R;
 import com.example.trashcollector.databinding.ActivityDriverHomeBinding;
 import com.example.trashcollector.databinding.ActivityLoginBinding;
+import com.example.trashcollector.main.LoginActivity;
+import com.example.trashcollector.main.Utility;
 
 public class DriverHomeActivity extends AppCompatActivity {
 
@@ -18,6 +20,11 @@ public class DriverHomeActivity extends AppCompatActivity {
         binding = ActivityDriverHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.profile.setOnClickListener(v->{
+            startActivity(new Intent(this, LoginActivity.class));
+            Utility.getUtilityInstance().setPreference(getApplicationContext(), Utility.IS_LOGIN, "no");
+
+        });
         binding.seeMyRequest.setOnClickListener(v->{
             startActivity(new Intent(this, MyRequest.class));
         });

@@ -13,8 +13,12 @@ import com.example.trashcollector.databinding.ActivityCompletedRequestBinding;
 import com.example.trashcollector.databinding.ActivityMyRequestBinding;
 import com.example.trashcollector.main.customer.CollectionDetail;
 import com.example.trashcollector.main.customer.RequestAdapter;
+import com.example.trashcollector.main.customer.RequestModel;
+
+import java.util.ArrayList;
 
 public class MyRequest extends AppCompatActivity implements RequestAdapter.OnItemClickListener, View.OnClickListener  {
+    private ArrayList<RequestModel> requestModels = new ArrayList<>();
 
     private ActivityMyRequestBinding binding;
     private RequestAdapter adapter;
@@ -33,7 +37,7 @@ public class MyRequest extends AppCompatActivity implements RequestAdapter.OnIte
     }
     private void setUpAdapter() {
 
-        adapter = new RequestAdapter();
+        adapter = new RequestAdapter(requestModels);
         adapter.setOnItemClickListener(this);
         binding.collectionRv.setAdapter(adapter);
 

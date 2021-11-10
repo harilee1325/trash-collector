@@ -9,6 +9,24 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 public class Utility {
+    public static final String EMAIL = "email";
+    public static final String NAME = "name";
+    public static final String LOCATION = "location";
+    public static final String PHONE = "phone";
+    public static final String ID = "id";
+
+    public static final String REQUEST_DATE = "request-date";
+    public static final String USERNAME = "user-name";
+    public static final String LAT = "lat";
+    public static final String LNG = "lng";
+    public static final String STATUS = "status";
+    public static final String DRIVER_ID = "driver-id";
+    public static final String DRIVER_NAME = "driver-name";
+    public static final String USERID = "user-id";
+    public static final String IS_LOGIN = "is_login";
+    public static final String TYPE = "type";
+
+
     private static Utility utilityInstance;
 
     private Utility() {
