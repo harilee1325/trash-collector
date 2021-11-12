@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                             Utility.getUtilityInstance().setPreference(getApplicationContext(), Utility.LOCATION, document.getString("location"));
                             Utility.getUtilityInstance().setPreference(getApplicationContext(), Utility.PHONE, document.getString("phone"));
                             Utility.getUtilityInstance().setPreference(getApplicationContext(), Utility.ID, document.getId());
-                            Utility.getUtilityInstance().setPreference(getApplicationContext(), Utility.IS_LOGIN, document.getString("yes"));
+                            Utility.getUtilityInstance().setPreference(getApplicationContext(), Utility.IS_LOGIN, "yes");
 
                             String type = document.getString("type");
                             if (type.equalsIgnoreCase("user"))
@@ -128,9 +128,13 @@ public class LoginActivity extends AppCompatActivity {
                         if (progressBar.isShowing()) {
                             progressBar.dismiss();
                         }
+                        Toast.makeText(getApplicationContext(), task.getException().toString(), Toast.LENGTH_SHORT).show();
+
                     }
                 }).addOnFailureListener(fail -> {
             Log.d(TAG, "Error getting documents: " + fail.getLocalizedMessage());
+            Toast.makeText(getApplicationContext(), fail.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
             if (progressBar.isShowing()) {
                 progressBar.dismiss();
             }

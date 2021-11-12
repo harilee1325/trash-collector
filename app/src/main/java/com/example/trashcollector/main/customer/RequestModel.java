@@ -1,5 +1,7 @@
 package com.example.trashcollector.main.customer;
 
+import java.util.List;
+
 public class RequestModel {
 
     private String date;
@@ -12,6 +14,24 @@ public class RequestModel {
     private String userId;
     private String driverId;
     private String id;
+    private List<String> commentDriver;
+    private List<String> commentOfficer;
+
+    public List<String> getCommentDriver() {
+        return commentDriver;
+    }
+
+    public void setCommentDriver(List<String> commentDriver) {
+        this.commentDriver = commentDriver;
+    }
+
+    public List<String> getCommentOfficer() {
+        return commentOfficer;
+    }
+
+    public void setCommentOfficer(List<String> commentOfficer) {
+        this.commentOfficer = commentOfficer;
+    }
 
     public String getId() {
         return id;

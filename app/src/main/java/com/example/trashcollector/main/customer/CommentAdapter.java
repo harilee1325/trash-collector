@@ -10,7 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.trashcollector.databinding.CommentCardBinding;
 import com.example.trashcollector.databinding.CompletedRequestCardBinding;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHolder>{
+    private List<String> comment = new ArrayList<>();
+
+    public CommentAdapter(List<String> commentOfficer) {
+        this.comment.addAll(commentOfficer);
+    }
+
     @NonNull
     @Override
     public CommentAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -21,11 +30,12 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull CommentAdapter.ViewHolder holder, int position) {
 
+        holder.binding.comment.setText(comment.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 3;
+        return comment.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

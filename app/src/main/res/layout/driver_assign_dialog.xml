@@ -3,17 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center">
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/driver_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:hint="Search for driver name"
+        android:hint="Drivers Nearby"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
         android:textColor="@color/black"
@@ -25,6 +26,7 @@
        android:layout_height="match_parent"
        android:id="@+id/driver_list_rv"
        android:layout_marginTop="20dp"
+       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
        tools:listitem="@layout/driver_name_card"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

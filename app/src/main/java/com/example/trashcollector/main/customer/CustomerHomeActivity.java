@@ -31,8 +31,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class CustomerHomeActivity extends AppCompatActivity {
@@ -110,6 +112,9 @@ public class CustomerHomeActivity extends AppCompatActivity {
         createRequest.setOnClickListener(v -> {
 
 
+            List<String> commentDriver = new ArrayList<>();
+            List<String> commentOfficer = new ArrayList<>();
+
             Map<String, Object> user = new HashMap<>();
             user.put(Utility.REQUEST_DATE, "Collection for " + formatter.format(date));
             user.put(Utility.USERNAME, Utility.getUtilityInstance().getPreference(getApplicationContext(), Utility.NAME));
@@ -119,6 +124,10 @@ public class CustomerHomeActivity extends AppCompatActivity {
             user.put(Utility.STATUS, "open");
             user.put(Utility.DRIVER_ID, "not assigned");
             user.put(Utility.DRIVER_NAME, "not assigned");
+            user.put(Utility.COMMENT_DRIVER, commentDriver);
+            user.put(Utility.COMMENT_OFFICER, commentOfficer);
+            user.put(Utility.DRIVER_NAME, "not assigned");
+
             user.put(Utility.USERID, Utility.getUtilityInstance().getPreference(getApplicationContext(), Utility.ID));
             progressBar = ProgressDialog.show(this, "Creating user", "Creating...");
 
@@ -148,5 +157,10 @@ public class CustomerHomeActivity extends AppCompatActivity {
 
         });
 
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }

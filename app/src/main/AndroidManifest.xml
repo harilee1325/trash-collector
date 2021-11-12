@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrashCollector">
         <activity
+            android:name=".main.officer.OfficerHomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".main.officer.AssignDriverActivity"
             android:exported="true" />
         <activity

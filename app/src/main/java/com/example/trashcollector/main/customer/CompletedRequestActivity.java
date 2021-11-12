@@ -23,6 +23,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CompletedRequestActivity extends AppCompatActivity implements RequestAdapter.OnItemClickListener, View.OnClickListener {
 
@@ -72,7 +73,8 @@ public class CompletedRequestActivity extends AppCompatActivity implements Reque
                             model.setStatus(document.getString(Utility.STATUS));
                             model.setUserName(document.getString(Utility.USERNAME));
                             model.setUserId(document.getString(Utility.USERID));
-
+                            model.setCommentDriver((List<String>) document.get(Utility.COMMENT_DRIVER));
+                            model.setCommentOfficer((List<String>) document.get(Utility.COMMENT_OFFICER));
                             requestModels.add(model);
                         }
                         setUpAdapter(requestModels);
@@ -162,6 +164,8 @@ public class CompletedRequestActivity extends AppCompatActivity implements Reque
 
     @Override
     public void onClickListener(String id) {
-        startActivity(new Intent(this, CollectionDetail.class));
+        Intent i = new Intent(this, CollectionDetail.class);
+        i.putExtra("id", id);
+        startActivity(i);
     }
 }

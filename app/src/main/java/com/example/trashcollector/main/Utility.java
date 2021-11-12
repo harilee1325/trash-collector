@@ -25,6 +25,8 @@ public class Utility {
     public static final String USERID = "user-id";
     public static final String IS_LOGIN = "is_login";
     public static final String TYPE = "type";
+    public static final String COMMENT_DRIVER = "comment_driver";
+    public static final String COMMENT_OFFICER = "comment_officer";
 
 
     private static Utility utilityInstance;
