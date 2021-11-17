@@ -25,6 +25,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.grpc.okhttp.internal.Util;
+
 public class CompletedRequestActivity extends AppCompatActivity implements RequestAdapter.OnItemClickListener, View.OnClickListener {
 
     private ActivityCompletedRequestBinding binding;
@@ -52,6 +54,7 @@ public class CompletedRequestActivity extends AppCompatActivity implements Reque
         progressBar = ProgressDialog.show(this, "Fetching Requests", "Loading...");
         db.collection("requests")
                 .whereEqualTo(Utility.STATUS, "done")
+                .whereEqualTo(Utility.USERID, Utility.getUtilityInstance().getPreference(getApplicationContext(), Utility.ID))
                 .get()
                 .addOnCompleteListener(task -> {
                     if (progressBar.isShowing()) {
@@ -98,6 +101,7 @@ public class CompletedRequestActivity extends AppCompatActivity implements Reque
         progressBar = ProgressDialog.show(this, "Fetching Requests", "Loading...");
         db.collection("requests")
                 .whereEqualTo(Utility.STATUS, "open")
+                .whereEqualTo(Utility.USERID, Utility.getUtilityInstance().getPreference(getApplicationContext(), Utility.ID))
                 .get()
                 .addOnCompleteListener(task -> {
                     if (progressBar.isShowing()) {

@@ -1,4 +1,4 @@
-package com.example.trashcollector.main;
+package com.example.trashcollector.main.officer;
 
 import static androidx.constraintlayout.widget.ConstraintLayoutStates.TAG;
 
@@ -20,8 +20,10 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.trashcollector.R;
-import com.example.trashcollector.databinding.ActivityLoginBinding;
+import com.example.trashcollector.databinding.ActivityCreateDriverBinding;
 import com.example.trashcollector.databinding.ActivitySignupBinding;
+import com.example.trashcollector.main.LoginActivity;
+import com.example.trashcollector.main.SignupActivity;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,9 +34,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignupActivity extends AppCompatActivity {
+public class CreateDriverActivity extends AppCompatActivity {
 
-    private ActivitySignupBinding binding;
+    private ActivityCreateDriverBinding binding;
     private FirebaseFirestore db;
     private ProgressDialog progressBar;
     private FusedLocationProviderClient fusedLocationClient;
@@ -44,7 +46,7 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySignupBinding.inflate(getLayoutInflater());
+        binding = ActivityCreateDriverBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         db = FirebaseFirestore.getInstance();
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -87,7 +89,7 @@ public class SignupActivity extends AppCompatActivity {
                         }
                     }
                 });
-        binding.signup.setOnClickListener(v->{
+        binding.signup.setOnClickListener(v -> {
             createUser();
         });
     }
@@ -122,7 +124,7 @@ public class SignupActivity extends AppCompatActivity {
         user.put("password", binding.password.getText().toString());
         user.put("lat",  String.valueOf(lat));
         user.put("lng",  String.valueOf(lng));
-        user.put("type", "user");
+        user.put("type", "driver");
         progressBar = ProgressDialog.show(this, "Creating user", "Creating...");
 
         // Add a new document with a generated ID
@@ -135,7 +137,7 @@ public class SignupActivity extends AppCompatActivity {
                         if (progressBar.isShowing()) {
                             progressBar.dismiss();
                         }
-                        startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                        startActivity(new Intent(CreateDriverActivity.this, LoginActivity.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

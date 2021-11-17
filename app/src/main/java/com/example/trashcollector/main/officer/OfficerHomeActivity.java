@@ -36,6 +36,9 @@ public class OfficerHomeActivity extends AppCompatActivity {
             Utility.getUtilityInstance().setPreference(getApplicationContext(), Utility.IS_LOGIN, "no");
 
         });
+        binding.createDriver.setOnClickListener(v->{
+            startActivity(new Intent(this, CreateDriverActivity.class));
+        });
     }
 
     @Override

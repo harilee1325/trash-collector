@@ -27,6 +27,7 @@ public class Utility {
     public static final String TYPE = "type";
     public static final String COMMENT_DRIVER = "comment_driver";
     public static final String COMMENT_OFFICER = "comment_officer";
+    public static final String ISSUES = "issues";
 
 
     private static Utility utilityInstance;

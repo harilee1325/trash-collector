@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView android:id="@+id/see_request_card"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="wrap_content"
     android:layout_marginStart="20dp"
     android:layout_marginTop="10dp"
     android:layout_marginEnd="20dp"
@@ -10,6 +10,12 @@
     android:background="@color/light_grey_1"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -27,7 +33,7 @@
             android:layout_marginEnd="15dp"
             android:text="Issue ID #122"
             android:textColor="@color/black"
-            android:textSize="28sp" />
+            android:textSize="18sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -38,7 +44,7 @@
             android:id="@+id/issue"
             android:textStyle="bold"
             android:textColor="@color/light_grey"
-            android:textSize="16sp" />
+            android:textSize="22sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -61,8 +67,28 @@
             android:textStyle="bold"
             android:textSize="16sp" />
 
+
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:id="@+id/issues_solved"
+                android:backgroundTint="@color/greenNew"
+                android:src="@drawable/ic_baseline_check_24"
+                android:contentDescription="profile"
+                android:layout_margin="16dp"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.cardview.widget.CardView>
 
